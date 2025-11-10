@@ -1,0 +1,26 @@
+name: CI
+on:
+  push:
+  pull_request:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deps
+        run: |
+          python -m pip install -U pip
+          pip install -r requirements.txt
+          pip install flake8
+      - name: Lint
+        run: flake8 src
+      - name: Import checks
+        run: python - <<'PY'
+from importlib import import_module
+for mod in ["src.app","src.cli","src.rag.ingest","src.rag.retriever","src.rag.pipeline","src.finetune.train_lora","src.eval.evaluate"]:
+    import_module(mod)
+print("Imports OK")
+PY

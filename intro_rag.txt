@@ -1,0 +1,1 @@
+RAG (Retrieval-Augmented Generation) enhances LLM responses by retrieving relevant context from a knowledge base and feeding it as additional input.

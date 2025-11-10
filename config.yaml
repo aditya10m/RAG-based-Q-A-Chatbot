@@ -1,0 +1,6 @@
+embedding_model: sentence-transformers/all-MiniLM-L6-v2
+llm_model: meta-llama/Meta-Llama-3-8B-Instruct
+chunk_size: 800
+chunk_overlap: 100
+k: 4
+device: auto

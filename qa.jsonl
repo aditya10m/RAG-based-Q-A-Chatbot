@@ -1,0 +1,2 @@
+{"question": "What is RAG?", "answer": "Retrieval-Augmented Generation that fetches context before generation."}
+{"question": "What library is commonly used for vector search?", "answer": "FAISS is widely used for similarity search on dense vectors."}
